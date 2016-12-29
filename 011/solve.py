@@ -19,7 +19,6 @@ moves = [[0, 0, 0, 0, 0, 1, 2, 3], [0, 1, 2, 3, 0, 0, 0, 0], [0, 1, 2, 3, 0, 1, 
 for a in xrange(20):
     for b in xrange(20):
         for move in moves:
-            z = get(a, b, grid, move)
-            result = max(result, z)
+            result = max(result, get(a, b, grid, move))
 
 print result
