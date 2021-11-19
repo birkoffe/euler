@@ -15,20 +15,19 @@ func isPrime(n int) bool {
 	return true
 }
 
-func gen_primes(c chan int) {
-	for i := 2; ; i++ {
-		if isPrime(i) {
-			c <- i
-		}
-	}
-}
-
 func main() {
 	number := 600851475143
 	max_prime := 0
 
 	primes := make(chan int)
-	go gen_primes(primes)
+
+	go func() {
+		for i := 2; ; i++ {
+			if isPrime(i) {
+				primes <- i
+			}
+		}
+	}()
 
 	for number != 1 {
 		prime := <-primes
