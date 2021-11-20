@@ -1,7 +1,5 @@
 #!usr/bin/python
 
-from math import sqrt
-
 def D(a, b):
     count = 0
 
@@ -25,8 +23,9 @@ i = 0
 a, b = 1, 1
 while True:
     i += 1
-    if D(a, b) > 500:
-        print D(a, b), a*b
+    dd = D(a, b)
+    if dd > 500:
+        print(dd, a*b)
         break
     if i%2 == 0:
         a += 1
