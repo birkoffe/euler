@@ -17,7 +17,7 @@ func factorsCount(triangle int) int {
 }
 
 func slow() {
-	// 200s in M1
+	// 200s on M1
 	triangle := 0
 	n := 0
 
